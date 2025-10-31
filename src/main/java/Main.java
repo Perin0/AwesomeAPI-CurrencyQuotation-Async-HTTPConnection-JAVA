@@ -7,13 +7,27 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletableFuture;
 import io.github.cdimascio.dotenv.Dotenv;
+import java.util.concurrent.ExecutorService; 
+import java.util.concurrent.Executors;     
+import java.util.concurrent.ThreadFactory;  
 
 public class Main {
+    //daemon thread factory
+    //to make sure to interrupt all threads after Main thread is over
+    private static final ThreadFactory daemonThreadFactory = (Runnable r) -> {
+        Thread thread = new Thread(r);
+        thread.setDaemon(true);
+        return thread;
+    };
+
+    //daemon thread fatory executor service
+    private static final ExecutorService customExecutor = Executors.newCachedThreadPool(daemonThreadFactory);
 
     //httpClient is imutable and reusable
     private static final HttpClient httpClient = HttpClient.newBuilder()
             .version(HttpClient.Version.HTTP_2)
             .followRedirects(HttpClient.Redirect.NORMAL)
+            .executor(customExecutor)
             .build();
 
     public static void main(String[] args) {
