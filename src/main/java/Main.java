@@ -6,6 +6,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletableFuture;
+import io.github.cdimascio.dotenv.Dotenv;
 
 public class Main {
 
@@ -16,7 +17,9 @@ public class Main {
             .build();
 
     public static void main(String[] args) {
-        String token = "YOUR_API_TOKEN";
+        Dotenv dotenv = Dotenv.load();
+
+        String token = dotenv.get("YOUR_API_TOKEN");
         if (token==null || token.isEmpty()) {
             System.out.println("Invalid token");
         }
