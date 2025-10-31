@@ -73,7 +73,7 @@ This project uses the Maven `exec` plugin, so you don't need to package it into 
 In your terminal, simply execute:
 
 ```bash
-mvn exec:java -Dexec.mainClass="Main"
+mvn exec:java"
 ```
 Maven will automatically compile the code, download dependencies, and run the Main.java file.
 
