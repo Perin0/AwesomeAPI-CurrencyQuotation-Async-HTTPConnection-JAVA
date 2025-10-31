@@ -49,7 +49,7 @@ public class Main {
         //callbacks
         CompletableFuture<Void> processingFuture = asyncResponseFuture.thenAccept(response -> {
             //block executed in a thread of HttpClient pool
-            System.out.println("\n[CALLBACK] Request received: !");
+            System.out.println("\n[CALLBACK] Response received: !");
             System.out.println("[CALLBACK] Status Code: " + response.statusCode());
 
             String body = response.body();
