@@ -38,7 +38,7 @@ public class Main {
                 .GET()
                 .build();
 
-        System.out.println(": " + targetUri);
+        System.out.println("Dispatching request to: " + targetUri);
 
         //send async request
         CompletableFuture<HttpResponse<String>> asyncResponseFuture = httpClient.sendAsync(
@@ -59,12 +59,12 @@ public class Main {
                 JSONObject root = new JSONObject(body);
                 
                 System.out.println("[CALLBACK] Parsed JSON content:");
-                System.out.prinln(root.toString(4));
+                System.out.println(root.toString(4));
                 
             } catch (JSONException e) {
                 //if JSON is malformed or key doesn't exist
-                System.err.println("[CALLBACK] Erro ao analisar o JSON: " + e.getMessage());
-                System.err.println("[CALLBACK] Resposta recebida que causou o erro: " + body);
+                System.err.println("[CALLBACK] Error in analysing JSON: " + e.getMessage());
+                System.err.println("[CALLBACK] Recieved response that cause the error: " + body);
             }
 
         }).exceptionally(ex -> {
