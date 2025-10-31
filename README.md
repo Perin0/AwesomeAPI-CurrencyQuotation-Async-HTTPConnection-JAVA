@@ -10,13 +10,13 @@ This is a simple Java application built to demonstrate how to make asynchronous 
 
 It connects to the [AwesomeAPI](https://docs.awesomeapi.com.br/) to fetch currency exchange rates (BRL-USD, EUR-BRL, BTC-BRL), securely loads an API key using `java-dotenv`, and parses the JSON response using `org.json`.
 
-### 🎯 Purpose: A Study Step
+### 📚 A Study Step
 
 **This repository is a foundational study, not a final product.**
 
 The code here is a proof-of-concept for handling async web requests. The logic from `Main.java` is intended to be refactored into a dedicated HTTP connection class for a larger project: **a Java-based currency converter application.**
 
-## 🛠️ Technologies Used
+##🤖 Technologies Used
 
 * **Java 11+**: For the native `HttpClient` and `CompletableFuture`.
 * **Maven**: For project management and dependencies.
@@ -65,6 +65,8 @@ This project requires a free API token from AwesomeAPI.
     The `.gitignore` file is already configured to keep your `.env` file private.
 
 #### 2. Run the Application
+
+You can just run it normally with the "Run" button in your IDE of choice... or the cool way
 
 This project uses the Maven `exec` plugin, so you don't need to package it into a `.jar` to run it.
 
