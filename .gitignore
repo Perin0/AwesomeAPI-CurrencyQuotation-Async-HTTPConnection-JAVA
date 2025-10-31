@@ -1,45 +1,23 @@
-### IntelliJ IDEA ###
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
-.vscode/
-
-### OS ###
-.DS_Store
-Thumbs.db
-
-# env
+# Arquivo secreto de ambiente
 .env
 
-# maven compiller output
+# Saída do Maven (código compilado)
 /target/
 
-# intellij trash
+# Lixo do IntelliJ
 .idea/
 *.iml
-*.iws
 
-# log archives
+# Lixo do VS Code
+.vscode/
+
+# Arquivos de Log
 *.log
 logs/
+
+# Arquivo temporário de limpeza
+replacements.txt
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
