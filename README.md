@@ -129,3 +129,5 @@ Maven will automatically compile the code, download dependencies, and run the Ma
 
 Finalized, finishing Main thread.
 ```
+
+**I have a ruleset that requires a pull request before merging into the main branch, create your own branch and add your features, if you have corrections or improvements, please make the request, or DM me, I will gladly accpet it**
