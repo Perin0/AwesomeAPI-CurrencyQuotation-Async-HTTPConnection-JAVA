@@ -2,6 +2,7 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+API async connection in JAVA.iml
 
 ### Eclipse ###
 .apt_generated
@@ -24,6 +25,12 @@ bin/
 
 ### VS Code ###
 .vscode/
+
+### IDE ###
+.idea/
+
+### Maven Compilator ###
+target/
 
 ### Mac OS ###
 .DS_Store
