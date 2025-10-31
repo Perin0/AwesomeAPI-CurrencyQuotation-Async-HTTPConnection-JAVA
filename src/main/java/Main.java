@@ -7,9 +7,9 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.CompletableFuture;
 import io.github.cdimascio.dotenv.Dotenv;
-import java.util.concurrent.ExecutorService; 
-import java.util.concurrent.Executors;     
-import java.util.concurrent.ThreadFactory;  
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 public class Main {
     //daemon thread factory
@@ -94,5 +94,7 @@ public class Main {
         processingFuture.join();
 
         System.out.println("\nFinalized, finishing Main thread");
+
+        System.exit(0);
     }
 }
