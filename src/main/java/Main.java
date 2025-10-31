@@ -58,17 +58,9 @@ public class Main {
                 //parse body into JSON object
                 JSONObject root = new JSONObject(body);
                 
-                JSONObject eurBrlData = root.getJSONObject("EURBRL");
-                String eurLow = eurBrlData.getString("low");
-                System.out.println("[CALLBACK] Cotação mínima (low) EURBRL: " + eurLow);
-
-                JSONObject btcBrlData = root.getJSONObject("BTCBRL");
-                String btcLow = btcBrlData.getString("low");
-                System.out.println("[CALLBACK] Cotação mínima (low) BTCBRL: " + btcLow);
+                System.out.println("[CALLBACK] Parsed JSON content:");
+                System.out.prinln(root.toString(4));
                 
-                String brlUsdLow = root.getJSONObject("BRLUSD").getString("low");
-                System.out.println("[CALLBACK] Cotação mínima (low) BRLUSD: " + brlUsdLow);
-
             } catch (JSONException e) {
                 //if JSON is malformed or key doesn't exist
                 System.err.println("[CALLBACK] Erro ao analisar o JSON: " + e.getMessage());
