@@ -1,3 +1,5 @@
+import org.json.JSONObject;
+import org.json.JSONException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.HttpClient;
@@ -48,8 +50,27 @@ public class Main {
             System.out.println("[CALLBACK] Status Code: " + response.statusCode());
 
             String body = response.body();
-            // Evite imprimir respostas gigantes no console
-            System.out.println("[CALLBACK] Body: " + body);
+            
+            try {
+                //parse body into JSON object
+                JSONObject root = new JSONObject(body);
+                
+                JSONObject eurBrlData = root.getJSONObject("EURBRL");
+                String eurLow = eurBrlData.getString("low");
+                System.out.println("[CALLBACK] Cotação mínima (low) EURBRL: " + eurLow);
+
+                JSONObject btcBrlData = root.getJSONObject("BTCBRL");
+                String btcLow = btcBrlData.getString("low");
+                System.out.println("[CALLBACK] Cotação mínima (low) BTCBRL: " + btcLow);
+                
+                String brlUsdLow = root.getJSONObject("BRLUSD").getString("low");
+                System.out.println("[CALLBACK] Cotação mínima (low) BRLUSD: " + brlUsdLow);
+
+            } catch (JSONException e) {
+                //if JSON is malformed or key doesn't exist
+                System.err.println("[CALLBACK] Erro ao analisar o JSON: " + e.getMessage());
+                System.err.println("[CALLBACK] Resposta recebida que causou o erro: " + body);
+            }
 
         }).exceptionally(ex -> {
             //blcok executed if request (network, DNS, etc.) fails
