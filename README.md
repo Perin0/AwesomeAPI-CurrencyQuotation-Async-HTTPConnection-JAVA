@@ -4,45 +4,17 @@
 ![Maven](https://img.shields.io/badge/Maven-Apache-C71A36?style=flat-square&logo=apachemaven)
 ![AwesomeAPI](https://img.shields.io/badge/API-AwesomeAPI-1E88E5?style=flat-square)
 
-## 🚀 About This Project
+## About This Project
 
-This is a simple Java application built to demonstrate how to make asynchronous HTTP requests using Java 11's native `HttpClient`.
+This is a simple Java project built to demonstrate how to make asynchronous HTTP requests using Java 11's native `HttpClient`.
 
 It connects to the [AwesomeAPI](https://docs.awesomeapi.com.br/) to fetch currency exchange rates (BRL-USD, EUR-BRL, BTC-BRL), securely loads an API key using `java-dotenv`, and parses the JSON response using `org.json`.
 
-### 📚 A Study Step
+### A Study Step
 
 **This repository is a foundational study, not a final product.**
 
 The code here is a proof-of-concept for handling async web requests. The logic from `Main.java` is intended to be refactored into a dedicated HTTP connection class for a larger project: **a Java-based currency converter application.**
-
-##🤖 Technologies Used
-
-* **Java 11+**: For the native `HttpClient` and `CompletableFuture`.
-* **Maven**: For project management and dependencies.
-* **org.json**: For simple and direct JSON parsing.
-* **java-dotenv**: For securely managing API keys outside of the source code.
-* **AwesomeAPI**: As the external data source for currency quotes.
-
-## ⚙️ Getting Started
-
-You can run this project in a cloud-based IDE (like GitHub Codespaces) or on your local machine.
-
-### Method 1: GitHub Codespaces (Recommended)
-
-1.  Click the `<> Code` button on the repository page.
-2.  Select `Create codespace on main`.
-3.  The environment will open in your browser, with all dependencies (Java, Maven) pre-installed.
-4.  Follow the **"Set Up Your API Key"** steps below.
-
-### Method 2: Local Machine (Clone)
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/Perin0/AwesomeAPI-CurrencyQuotation-AsyncHTTPConnection-JAVA.git](https://github.com/Perin0/AwesomeAPI-CurrencyQuotation-AsyncHTTPConnection-JAVA.git)
-    cd AwesomeAPI-CurrencyQuotation-AsyncHTTPConnection-JAVA
-    ```
-2.  Ensure you have **Java 11 (or newer)** and **Maven** installed on your machine.
 
 ---
 
@@ -53,7 +25,7 @@ You can run this project in a cloud-based IDE (like GitHub Codespaces) or on you
 This project requires a free API token from AwesomeAPI.
 
 1.  **Get your token:** Go to [AwesomeAPI (Token)](https://docs.awesomeapi.com.br/api-de-moedas#token) to get one.
-2.  **Create your secrets file:** In the project's root directory, copy the example file.
+2.  **Create your .env file:** In the project's root directory, or just copy the example file.
     ```bash
     cp .env.example .env
     ```
@@ -66,11 +38,7 @@ This project requires a free API token from AwesomeAPI.
 
 #### 2. Run the Application
 
-You can just run it normally with the "Run" button in your IDE of choice... or the cool way
-
-This project uses the Maven `exec` plugin, so you don't need to package it into a `.jar` to run it.
-
-In your terminal, simply execute:
+You can just run it normally with the "Run" or use the command line below
 
 ```bash
 mvn exec:java"
