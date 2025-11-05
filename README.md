@@ -18,7 +18,7 @@ The code here is a proof-of-concept for handling async web requests. The logic f
 
 ---
 
-### 🔑 How to Run (Required Steps)
+### How to Run (Required Steps)
 
 #### 1. Set Up Your API Key
 
@@ -47,7 +47,7 @@ Maven will automatically compile the code, download dependencies, and run the Ma
 
 ---
 
-## 🖥️ Example Output
+## Example Output
 ```bash
   Dispatching request to: https://economia.awesomeapi.com.br/last/BRL-USD,EUR-BRL,BTC-BRL?token=PLACE_YOUR_AWESOME_API_TOKEN_HERE
 ...request sent. Main thread still free.
